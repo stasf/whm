@@ -15,7 +15,7 @@ using System.IO;
 namespace WoWHealthMonitor
 {
 
-
+	//stas
 
 	public static class BotRoutine
 	{
