@@ -14,6 +14,9 @@ using System.IO;
 
 namespace WoWHealthMonitor
 {
+
+
+
 	public static class BotRoutine
 	{
 		public static Boolean StartScript = false;
@@ -136,8 +139,8 @@ namespace WoWHealthMonitor
 					Thread.Sleep(100);
 					continue;
 				}
-				Player me = players[0];
 
+				Player me = players[0];
 				Player tar = players.Aggregate((p1, p2) => ((p1.HpMax - p1.HpCur) > (p2.HpMax - p2.HpCur) ? p1 : p2));
 
 				//check mana
@@ -242,80 +245,6 @@ namespace WoWHealthMonitor
 					Thread.Sleep(50);
 					continue;
 				}
-
-
-				//
-
-
-
-				//Functions.SendKeyDown(PID, Functions.VK_4);
-				//Functions.SendKeyUp(PID, Functions.VK_4);
-
-				/*
-				if (!IsFishing && (DateTime.Now - FishingTimeDelay).TotalMilliseconds > rand.Next(2000, 2500))
-				{
-					BobberFound = false;
-					BobberSplashed = false;
-
-					FishingTimeDelay = DateTime.Now;
-					Functions.SendKeyDown(PID, Functions.VK_3);
-					Functions.SendKeyUp(PID, Functions.VK_3);
-				}
-
-				if (Functions.GetPixelColor(1935, 1038) != Color.FromArgb(0, 255, 0))
-				{
-					IsFishing = false;
-					Thread.Sleep(50);
-					continue;
-				}
-				else
-				{
-					if (!IsFishing)
-					{
-						IsFishing = true;
-						curX = startX;
-						curY = startY;
-					}
-				}
-
-
-				if (!BobberFound)
-				{
-					if (Functions.GetPixelColor(1935, 1031) != Color.FromArgb(0, 255, 0))
-						Cursor.Position = new Point(curX, curY);
-					else
-						BobberFound = true;
-
-					curX += 20;
-
-					if (curX > endX)
-					{
-						curY += 30;
-						curX = startX;
-					}
-				}
-
-				if (Functions.GetPixelColor(1935, 1025) != Color.FromArgb(0, 255, 0))
-					BobberSplashed = false;
-				else
-					BobberSplashed = true;
-
-
-				/*
-				if (BobberSplashed && BobberFound)
-				{
-					Thread.Sleep(rand.Next(100, 500));
-
-					Functions.mouse_event(Functions.MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, 0);
-					Thread.Sleep(rand.Next(5, 20));
-					Functions.mouse_event(Functions.MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
-					FishingTimeDelay = DateTime.Now;
-				}
-				*/
-
-
-
-
 
 
 			}

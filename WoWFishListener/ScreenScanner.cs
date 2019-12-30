@@ -22,19 +22,12 @@ namespace WoWHealthMonitor
 		public static int PowerWordShield = 4;
 		public static int WeakenedSoul = 8;
 		public static int Drink = 16;
-
-		public static Boolean HasBuff(int buffs, int buff)
-		{
-			if ((buffs & buff) == buff)
-				return true;
-			return false;
-		}
 	}
 	public class Player
 	{
 		public String name;
 		public Boolean exists;
-		public Boolean inCombat, isCasting, isDrinking, isFollowing, isAutoAttack;
+		public Boolean inCombat, isCasting, isDrinking, isFollowing, isAutoAttack, hasMagicDebuff, hasDiseaseDebuff;
 		public Int32 HpMax, HpCur;
 		public Int32 HpPercent;
 
@@ -146,6 +139,7 @@ namespace WoWHealthMonitor
 					//read buffs
 					color = Functions.GetPixelColor(winOffset + 6 * i, 1039 - 6);
 					tmpPlayers[i].UnitBuffs = color.R;
+					tmpPlayers[i].hasMagicDebuff = (color.B != 0 ? true : false);
 				}
 
 				//isCasting

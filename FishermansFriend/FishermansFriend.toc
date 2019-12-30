@@ -1,0 +1,5 @@
+## Interface: 11302
+## Title: FishermansFriend
+## Author: fuo
+
+FishermansFriend.xml
