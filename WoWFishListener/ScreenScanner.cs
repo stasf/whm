@@ -23,6 +23,7 @@ namespace WoWHealthMonitor
 		public static int WeakenedSoul = 8;
 		public static int Drink = 16;
 	}
+
 	public class Player
 	{
 		public String name;
